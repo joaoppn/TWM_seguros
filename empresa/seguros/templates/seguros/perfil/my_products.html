@@ -1,0 +1,44 @@
+{% extends "seguros/layout.html" %}
+{% block css %}<link href="../../static/seguros/myproducts.css" rel="stylesheet">{% endblock %}
+{% block body %}
+
+<div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="true" href="{% url 'perfil' %}">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'myproducts' %}">Meus Seguros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'orders' %}">Ordens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="{% url 'createorder' %}">Requisitar Ordens</a>
+        </li>
+
+      </ul>
+    </div>
+
+
+
+    <div class="seg-content">
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          <h2 class="title-seg-content">
+            Seguros
+          </h2>
+        </div>
+        <ul class="list-group list-group-flush">
+          {%for seguro in seguros %}
+            <li class="list-group-item">{{seguro}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+  
+    </div>
+
+   
+   
+{% endblock %}

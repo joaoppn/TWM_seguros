@@ -1,0 +1,70 @@
+{% extends "seguros/layout.html" %}
+{% block css %}<link href="../../static/seguros/perfil.css" rel="stylesheet">{% endblock %}
+{% block body %}
+
+{%if request.user.is_superuser%}
+
+<h1>Tecnico</h1>
+<h2>Insira seu nome:</h2>
+<div class="form-signin w-100 m-auto">
+  <form action="{%url 'tecnico' %}" method="post">
+    {% csrf_token %}
+    <div class="form-floating">
+      <select name="tecnico" id=""> 
+        {%for tec in tecs%}
+        <option value="{{tec.nome}}">{{tec.Nome}}</option>
+        {%endfor%}
+      </select>
+        <input type="submit">
+    </div>
+  </form>
+</div>
+
+
+{%else%}
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="{% url 'perfil' %}">Perfil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'myproducts' %}">Meus Seguros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'orders' %}">Ordens</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'createorder' %}">Requisitar Ordens</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Informações</h5>
+    <p class="card-text">
+      <div class="form-floating mb-3">
+        <input type="email" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="name@example.com" value={{request.user.first_name}}>
+        <label for="floatingEmptyPlaintextInput">Name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="name@example.com" value={{request.user.last_name}}>
+        <label for="floatingEmptyPlaintextInput">Sobrenome</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="name@example.com" value={{request.user.username}}>
+        <label for="floatingPlaintextInput">Username</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" readonly class="form-control-plaintext" id="floatingPlaintextInput" placeholder="name@example.com" value={{request.user.email}}>
+        <label for="floatingPlaintextInput">Email</label>
+      </div>
+    </p>
+
+  </div>
+</div>
+
+{%endif%}
+
+   
+{% endblock %}

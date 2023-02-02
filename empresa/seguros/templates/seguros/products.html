@@ -1,0 +1,105 @@
+{% extends "seguros/layout.html" %}
+{% block css %}<link href="../../static/seguros/home.css" rel="stylesheet">{% endblock %}
+
+{% block body %}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Escolha a melhor opção para você!</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  class="bd-placeholder-img card-img-top" style="max-height: 200px;" src="../../static/imagens/casa.jpg">
+            <div class="card-body">
+                <h2>Seguro de Casa</h2>
+              <p class="card-text">O seguro Liberty Imobiliária foi feito para proteger casas e apartamentos, sendo uma segurança para o locador. Sua casa segura, com Liberty Seguros. </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    <a href="add/SeguroCasa">Adquirir</a>
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm" >
+            <img  class="bd-placeholder-img card-img-top" style="max-height: 200px;" src="../../static/imagens/carro.jpg">
+            <div class="card-body">
+                <h2>Seguro de Carro</h2>
+              <p class="card-text">Cote e contrate o seguro ideal para o seu carro. Além de assistência de qualidade, você pode contar com benefícios exclusivos.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    <a href="add/SeguroCarro">Adquirir</a>
+                  </button>
+                </div>
+           
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  class="bd-placeholder-img card-img-top" style="max-height: 200px;" src="../../static/imagens/vida.jfif">
+            <div class="card-body">
+                <h2>Seguro de Vida</h2>
+              <p class="card-text">Ofereça uma vida muito mais tranquila a quem você ama. Aproveite o hoje sem se preocupar. Garanta Sua Tranquilidade. </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    <a href="add/SeguroVida">Adquirir</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  class="bd-placeholder-img card-img-top" style="max-height: 200px;" src="../../static/imagens/saude.jpg">
+            <div class="card-body">
+                <h2>Seguro de Saúde</h2>
+              <p class="card-text">Por que contar com a sorte, se você pode garantir o acesso ao médico com um plano? Investir na sua saúde é investir em uma vida mais próspera.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    <a href="add/SeguroSaude">Adquirir</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  class="bd-placeholder-img card-img-top" style="max-height: 200px;" src="../../static/imagens/eletronico.jpg">
+            <div class="card-body">
+                <h2>Seguro Eletrônicos</h2>
+              <p class="card-text">Seguro celular feito por quem se importa. Cobertura inteligente que protege até contra furto simples. Planos mensais e sem burocracia. Cote com desconto.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+                    <a href="add/SeguroEletronico">Adquirir</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

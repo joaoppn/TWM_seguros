@@ -1,0 +1,60 @@
+{% extends "seguros/layout.html" %}
+{% block css %}<link href="../../static/seguros/perfil.css" rel="stylesheet">{% endblock %}
+{% block body %}
+
+<div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="true" href="{% url 'perfil' %}">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'myproducts' %}">Meus Seguros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'orders' %}">Ordens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active " href="{% url 'createorder' %}">Requisitar Ordens</a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="form-signin w-100 m-auto">
+        <form action="{%url 'createorder'%}" method="post">
+            {% csrf_token %}
+            
+            <h1 class="h3 mb-3 fw-normal">Requisitar Ordem</h1> 
+    
+            <div class="form-floating">
+                <input class="form-control" autofocus type="text" name="titulo" id="floatingInputName" placeholder="Titulo">
+                <label for="floatingInputName">Titulo</label>
+            </div>
+
+            <div class="form-floating">
+                <input class="form-control" autofocus type="file" name="imagem" id="floatingInputimage" placeholder="Imagem">
+                <label for="floatingInputfirstName">Imagem do produto</label>
+            </div>
+
+            <div class="form-floating">
+                <select name="seguro" class="form-select">
+                    <option>Selecione um seguro</option>
+                    {%for seguro in seguros%}
+                    <option value="{{seguro}}">{{seguro}}</option>
+                    {%endfor%}
+                </select>
+                <label for="floatingInputseguro">Produto</label>
+            </div>
+
+
+            <div class="form-floating">
+                <textarea class="form-control" name="descrição"></textarea>
+                <label for="floatingInputEmail">Descrição</label>
+            </div>
+            
+            </div>
+            <input class="w-100 btn btn-lg btn-primary" type="submit" value="Requisitar">
+            
+        </form>
+    </div>
+{% endblock %}
